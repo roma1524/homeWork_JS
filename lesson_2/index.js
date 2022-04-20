@@ -145,4 +145,4 @@ function howToSay(arg) {
   }
 }
 
-// howToSay(openNewDeposit);
+howToSay(openNewDeposit);
