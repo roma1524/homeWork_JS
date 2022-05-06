@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<div class="modal fade"
+     id="exampleModal"
+     tabindex="-1"
+     aria-labelledby="exampleModalLabel"
+     aria-hidden="true">
+    текст
+</div>
+
+<!--
+Задание.
+1. Сохраните ссылку на div в переменную
+2. Назначьте div'у обработку клика, у функции-обработчика объявите параметр event.
+3. При клике из event.target c помощью getAttribute() получите значение
+каждого атрибута и выведите в консоль.
+-->
+<script>
+
+  let divLink = document.querySelector('div');
+
+  divLink.addEventListener('click', function (event) {   // Попробовал разными способами реализовать
+
+    let objAttributes = event.target.attributes;
+
+    for (let item of objAttributes) {   // Очень удивился, когда for of сработал для объекта
+      console.log(item)
+      console.log('Значение атрибута : ' + item.value)
+    }
+    console.log('=-=-=-=-=-=-=-=-=-=-=-=-=-=-=');  // Не судите строго за моё дизайнерское решение разделения вариантов
+
+    console.log(event.target.getAttribute('class'));
+    console.log(event.target.getAttribute('id'));
+    console.log(event.target.getAttribute('tabindex'));
+    console.log(event.target.getAttribute('aria-labelledby'));
+    console.log(event.target.getAttribute('aria-hidden'));
+  })
+</script>
+</body>
+</html>
